@@ -9,11 +9,11 @@ use ReflectionParameter;
 class DataMethod
 {
     public function __construct(
-        public readonly string $name,
-        public readonly Collection $parameters,
-        public readonly bool $isStatic,
-        public readonly bool $isPublic,
-        public readonly bool $isCustomCreationMethod,
+        public string $name,
+        public Collection $parameters,
+        public bool $isStatic,
+        public bool $isPublic,
+        public bool $isCustomCreationMethod,
     ) {
     }
 

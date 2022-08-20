@@ -218,12 +218,12 @@ class DataTransformer
         }
 
         $wrapExecutionType = match (true) {
-            $value instanceof BaseData && $this->wrapExecutionType === WrapExecutionType::Enabled => WrapExecutionType::TemporarilyDisabled,
-            $value instanceof BaseData && $this->wrapExecutionType === WrapExecutionType::Disabled => WrapExecutionType::Disabled,
-            $value instanceof BaseData && $this->wrapExecutionType === WrapExecutionType::TemporarilyDisabled => WrapExecutionType::TemporarilyDisabled,
-            $value instanceof BaseDataCollectable && $this->wrapExecutionType === WrapExecutionType::Enabled => WrapExecutionType::Enabled,
-            $value instanceof BaseDataCollectable && $this->wrapExecutionType === WrapExecutionType::Disabled => WrapExecutionType::Disabled,
-            $value instanceof BaseDataCollectable && $this->wrapExecutionType === WrapExecutionType::TemporarilyDisabled => WrapExecutionType::Enabled,
+            $value instanceof BaseData && $this->wrapExecutionType->equals(WrapExecutionType::Enabled()) => WrapExecutionType::TemporarilyDisabled(),
+            $value instanceof BaseData && $this->wrapExecutionType->equals(WrapExecutionType::Disabled()) => WrapExecutionType::Disabled(),
+            $value instanceof BaseData && $this->wrapExecutionType->equals(WrapExecutionType::TemporarilyDisabled()) => WrapExecutionType::TemporarilyDisabled(),
+            $value instanceof BaseDataCollectable && $this->wrapExecutionType->equals(WrapExecutionType::Enabled()) => WrapExecutionType::Enabled(),
+            $value instanceof BaseDataCollectable && $this->wrapExecutionType->equals(WrapExecutionType::Disabled()) => WrapExecutionType::Disabled(),
+            $value instanceof BaseDataCollectable && $this->wrapExecutionType->equals(WrapExecutionType::TemporarilyDisabled()) => WrapExecutionType::Enabled(),
             default => throw new TypeError('Invalid wrap execution type')
         };
 

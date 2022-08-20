@@ -34,12 +34,12 @@ trait BaseDataCollectable
      */
     public function transform(
         bool $transformValues = true,
-        WrapExecutionType $wrapExecutionType = WrapExecutionType::Disabled,
+        ?WrapExecutionType $wrapExecutionType = null,
     ): array {
         $transformer = new DataCollectableTransformer(
             $this->dataClass,
             $transformValues,
-            $wrapExecutionType,
+            $wrapExecutionType ?: WrapExecutionType::Disabled(),
             $this->getPartialTrees(),
             $this->items,
             $this->getWrap(),

@@ -8,12 +8,21 @@ use Stringable;
 
 class PartialTrees implements Stringable
 {
+    public TreeNode $lazyIncluded;
+    public TreeNode $lazyExcluded;
+    public TreeNode $only;
+    public TreeNode $except;
+
     public function __construct(
-        public TreeNode $lazyIncluded = new DisabledTreeNode(),
-        public TreeNode $lazyExcluded = new DisabledTreeNode(),
-        public TreeNode $only = new DisabledTreeNode(),
-        public TreeNode $except = new DisabledTreeNode(),
+        ?TreeNode $lazyIncluded = null,
+        ?TreeNode $lazyExcluded = null,
+        ?TreeNode $only = null,
+        ?TreeNode $except = null,
     ) {
+        $this->lazyIncluded = $lazyIncluded ?: new DisabledTreeNode();
+        $this->lazyExcluded = $lazyExcluded ?: new DisabledTreeNode();
+        $this->only = $only ?: new DisabledTreeNode();
+        $this->except = $except ?: new DisabledTreeNode();
     }
 
     public function getNested(string $field): self

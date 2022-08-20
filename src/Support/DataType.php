@@ -22,24 +22,24 @@ use TypeError;
 
 class DataType implements Countable
 {
-    public readonly bool $isNullable;
+    public bool $isNullable;
 
-    public readonly bool $isMixed;
+    public bool $isMixed;
 
-    public readonly bool $isLazy;
+    public bool $isLazy;
 
-    public readonly bool $isOptional;
+    public bool $isOptional;
 
-    public readonly bool $isDataObject;
+    public bool $isDataObject;
 
-    public readonly bool $isDataCollectable;
+    public bool $isDataCollectable;
 
-    public readonly ?DataCollectableType $dataCollectableType;
+    public ?DataCollectableType $dataCollectableType;
 
     /** @var class-string<BaseData>|null */
-    public readonly ?string $dataClass;
+    public ?string $dataClass;
 
-    public readonly array $acceptedTypes;
+    public array $acceptedTypes;
 
     public static function create(ReflectionParameter|ReflectionProperty $reflection): self
     {
@@ -256,9 +256,9 @@ class DataType implements Countable
         $className = $reflection->getName();
 
         return match (true) {
-            is_a($className, DataCollection::class, true) => DataCollectableType::Default,
-            is_a($className, PaginatedDataCollection::class, true) => DataCollectableType::Paginated,
-            is_a($className, CursorPaginatedDataCollection::class, true) => DataCollectableType::CursorPaginated,
+            is_a($className, DataCollection::class, true) => DataCollectableType::Default(),
+            is_a($className, PaginatedDataCollection::class, true) => DataCollectableType::Paginated(),
+            is_a($className, CursorPaginatedDataCollection::class, true) => DataCollectableType::CursorPaginated(),
             default => null,
         };
     }

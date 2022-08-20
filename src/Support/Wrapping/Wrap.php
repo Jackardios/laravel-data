@@ -26,10 +26,10 @@ class Wrap
         $globalKey = config('data.wrap');
 
         return match (true) {
-            $this->type === WrapType::Disabled => null,
-            $this->type === WrapType::Defined => $this->key,
-            $this->type === WrapType::UseGlobal && $globalKey === null => null,
-            $this->type === WrapType::UseGlobal && $globalKey => $globalKey,
+            $this->type->equals(WrapType::Disabled()) => null,
+            $this->type->equals(WrapType::Defined()) => $this->key,
+            $this->type->equals(WrapType::UseGlobal()) && $globalKey === null => null,
+            $this->type->equals(WrapType::UseGlobal()) && $globalKey => $globalKey,
             default => throw new TypeError('Invalid wrap')
         };
     }

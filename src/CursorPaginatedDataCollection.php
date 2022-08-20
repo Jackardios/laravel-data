@@ -36,7 +36,7 @@ class CursorPaginatedDataCollection implements DataCollectable
      * @param CursorPaginator<TValue> $items
      */
     public function __construct(
-        public readonly string $dataClass,
+        public string $dataClass,
         CursorPaginator $items
     ) {
         $this->items = $items->through(

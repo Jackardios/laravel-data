@@ -35,7 +35,7 @@ class PaginatedDataCollection implements DataCollectable
      * @param Paginator $items
      */
     public function __construct(
-        public readonly string $dataClass,
+        public string $dataClass,
         Paginator $items
     ) {
         $this->items = $items->through(

@@ -7,11 +7,11 @@ use ReflectionParameter;
 class DataParameter
 {
     public function __construct(
-        public readonly string $name,
-        public readonly bool $isPromoted,
-        public readonly bool $hasDefaultValue,
-        public readonly mixed $defaultValue,
-        public readonly DataType $type,
+        public string $name,
+        public bool $isPromoted,
+        public bool $hasDefaultValue,
+        public mixed $defaultValue,
+        public DataType $type,
     ) {
     }
 

@@ -2,9 +2,14 @@
 
 namespace Spatie\LaravelData\Support\Wrapping;
 
-enum WrapType
+use Spatie\Enum\Enum;
+
+/**
+ * @method static self UseGlobal()
+ * @method static self Disabled()
+ * @method static self Defined()
+ */
+class WrapType extends Enum
 {
-    case UseGlobal;
-    case Disabled;
-    case Defined;
+    //
 }

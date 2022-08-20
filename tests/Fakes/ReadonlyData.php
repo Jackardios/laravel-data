@@ -7,7 +7,7 @@ use Spatie\LaravelData\Data;
 class ReadonlyData extends Data
 {
     public function __construct(
-        public readonly string $string,
+        public string $string,
     ) {
     }
 }

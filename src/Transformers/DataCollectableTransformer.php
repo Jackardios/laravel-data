@@ -49,7 +49,7 @@ class DataCollectableTransformer
                 fn (Enumerable $collection) => $collection->map(fn (TransformableData $data) => $data->transform(
                     $this->transformValues,
                     $this->wrapExecutionType->shouldExecute()
-                        ? WrapExecutionType::TemporarilyDisabled
+                        ? WrapExecutionType::TemporarilyDisabled()
                         : $this->wrapExecutionType
                 ))
             )

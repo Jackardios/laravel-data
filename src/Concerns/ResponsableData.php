@@ -23,7 +23,7 @@ trait ResponsableData
         }
 
         return new JsonResponse($this->transform(
-            wrapExecutionType: WrapExecutionType::Enabled,
+            wrapExecutionType: WrapExecutionType::Enabled(),
         ));
     }
 

@@ -41,7 +41,7 @@ class DataCollection implements DataCollectable, ArrayAccess
      * @param array|Enumerable<TKey, TValue>|DataCollection $items
      */
     public function __construct(
-        public readonly string $dataClass,
+        public string $dataClass,
         Enumerable|array|DataCollection $items
     ) {
         if (is_array($items)) {

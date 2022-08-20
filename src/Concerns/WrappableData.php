@@ -11,14 +11,14 @@ trait WrappableData
 
     public function withoutWrapping(): static
     {
-        $this->wrap = new Wrap(WrapType::Disabled);
+        $this->wrap = new Wrap(WrapType::Disabled());
 
         return $this;
     }
 
     public function wrap(string $key): static
     {
-        $this->wrap = new Wrap(WrapType::Defined, $key);
+        $this->wrap = new Wrap(WrapType::Defined(), $key);
 
         return $this;
     }
@@ -30,9 +30,9 @@ trait WrappableData
         }
 
         if (method_exists($this, 'defaultWrap')) {
-            return new Wrap(WrapType::Defined, $this->defaultWrap());
+            return new Wrap(WrapType::Defined(), $this->defaultWrap());
         }
 
-        return $this->wrap ?? new Wrap(WrapType::UseGlobal);
+        return $this->wrap ?? new Wrap(WrapType::UseGlobal());
     }
 }

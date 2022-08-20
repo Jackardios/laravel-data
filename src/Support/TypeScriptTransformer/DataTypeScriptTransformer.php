@@ -90,11 +90,11 @@ class DataTypeScriptTransformer extends DtoTransformer
             );
         }
 
-        $collectionType = match ($dataProperty->type->dataCollectableType) {
-            DataCollectableType::Default => $this->defaultCollectionType($dataProperty->type->dataClass),
-            DataCollectableType::Paginated => $this->paginatedCollectionType($dataProperty->type->dataClass),
-            DataCollectableType::CursorPaginated => $this->cursorPaginatedCollectionType($dataProperty->type->dataClass),
-            null => throw new RuntimeException('Cannot end up here since the type is dataCollectable')
+        $collectionType = match (true) {
+            $dataProperty->type->dataCollectableType->equals(DataCollectableType::Default()) => $this->defaultCollectionType($dataProperty->type->dataClass),
+            $dataProperty->type->dataCollectableType->equals(DataCollectableType::Paginated()) => $this->paginatedCollectionType($dataProperty->type->dataClass),
+            $dataProperty->type->dataCollectableType->equals(DataCollectableType::CursorPaginated()) => $this->cursorPaginatedCollectionType($dataProperty->type->dataClass),
+            is_null($dataProperty->type->dataCollectableType) => throw new RuntimeException('Cannot end up here since the type is dataCollectable')
         };
 
         if ($dataProperty->type->isNullable) {

@@ -265,7 +265,7 @@ class DataTypeTest extends TestCase
         $this->assertFalse($type->isOptional);
         $this->assertFalse($type->isDataObject);
         $this->assertTrue($type->isDataCollectable);
-        $this->assertEquals(DataCollectableType::Default, $type->dataCollectableType);
+        $this->assertTrue($type->dataCollectableType->equals(DataCollectableType::Default()));
         $this->assertEquals(SimpleData::class, $type->dataClass);
         $this->assertEquals([DataCollection::class], array_keys($type->acceptedTypes));
     }
@@ -284,7 +284,7 @@ class DataTypeTest extends TestCase
         $this->assertFalse($type->isOptional);
         $this->assertFalse($type->isDataObject);
         $this->assertTrue($type->isDataCollectable);
-        $this->assertEquals(DataCollectableType::Default, $type->dataCollectableType);
+        $this->assertTrue($type->dataCollectableType->equals(DataCollectableType::Default()));
         $this->assertEquals(SimpleData::class, $type->dataClass);
         $this->assertEquals([DataCollection::class], array_keys($type->acceptedTypes));
     }
@@ -303,7 +303,7 @@ class DataTypeTest extends TestCase
         $this->assertFalse($type->isOptional);
         $this->assertFalse($type->isDataObject);
         $this->assertTrue($type->isDataCollectable);
-        $this->assertEquals(DataCollectableType::Paginated, $type->dataCollectableType);
+        $this->assertTrue($type->dataCollectableType->equals(DataCollectableType::Paginated()));
         $this->assertEquals(SimpleData::class, $type->dataClass);
         $this->assertEquals([PaginatedDataCollection::class], array_keys($type->acceptedTypes));
     }
@@ -322,7 +322,7 @@ class DataTypeTest extends TestCase
         $this->assertFalse($type->isOptional);
         $this->assertFalse($type->isDataObject);
         $this->assertTrue($type->isDataCollectable);
-        $this->assertEquals(DataCollectableType::Paginated, $type->dataCollectableType);
+        $this->assertTrue($type->dataCollectableType->equals(DataCollectableType::Paginated()));
         $this->assertEquals(SimpleData::class, $type->dataClass);
         $this->assertEquals([PaginatedDataCollection::class], array_keys($type->acceptedTypes));
     }
@@ -341,7 +341,7 @@ class DataTypeTest extends TestCase
         $this->assertFalse($type->isOptional);
         $this->assertFalse($type->isDataObject);
         $this->assertTrue($type->isDataCollectable);
-        $this->assertEquals(DataCollectableType::CursorPaginated, $type->dataCollectableType);
+        $this->assertTrue($type->dataCollectableType->equals(DataCollectableType::CursorPaginated()));
         $this->assertEquals(SimpleData::class, $type->dataClass);
         $this->assertEquals([CursorPaginatedDataCollection::class], array_keys($type->acceptedTypes));
     }
@@ -360,7 +360,7 @@ class DataTypeTest extends TestCase
         $this->assertFalse($type->isOptional);
         $this->assertFalse($type->isDataObject);
         $this->assertTrue($type->isDataCollectable);
-        $this->assertEquals(DataCollectableType::CursorPaginated, $type->dataCollectableType);
+        $this->assertTrue($type->dataCollectableType->equals(DataCollectableType::CursorPaginated()));
         $this->assertEquals(SimpleData::class, $type->dataClass);
         $this->assertEquals([CursorPaginatedDataCollection::class], array_keys($type->acceptedTypes));
     }

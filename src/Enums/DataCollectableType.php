@@ -2,9 +2,14 @@
 
 namespace Spatie\LaravelData\Enums;
 
-enum DataCollectableType
+use Spatie\Enum\Enum;
+
+/**
+ * @method static self Default()
+ * @method static self Paginated()
+ * @method static self CursorPaginated()
+ */
+class DataCollectableType extends Enum
 {
-    case Default;
-    case Paginated;
-    case CursorPaginated;
+    //
 }

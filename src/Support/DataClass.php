@@ -22,18 +22,18 @@ class DataClass
 {
     public function __construct(
         /** @var class-string<DataObject> */
-        public readonly string $name,
+        public string $name,
         /** @var Collection<string, \Spatie\LaravelData\Support\DataProperty> */
-        public readonly Collection $properties,
+        public Collection $properties,
         /** @var Collection<string, \Spatie\LaravelData\Support\DataMethod> */
-        public readonly Collection $methods,
-        public readonly ?DataMethod $constructorMethod,
-        public readonly bool $appendable,
-        public readonly bool $includeable,
-        public readonly bool $responsable,
-        public readonly bool $transformable,
-        public readonly bool $validateable,
-        public readonly bool $wrappable,
+        public Collection $methods,
+        public ?DataMethod $constructorMethod,
+        public bool $appendable,
+        public bool $includeable,
+        public bool $responsable,
+        public bool $transformable,
+        public bool $validateable,
+        public bool $wrappable,
     ) {
     }
 

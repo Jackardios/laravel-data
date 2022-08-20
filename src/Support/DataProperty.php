@@ -16,18 +16,18 @@ use Spatie\LaravelData\Transformers\Transformer;
 class DataProperty
 {
     public function __construct(
-        public readonly string $name,
-        public readonly string $className,
-        public readonly DataType $type,
-        public readonly bool $validate,
-        public readonly bool $isPromoted,
-        public readonly bool $hasDefaultValue,
-        public readonly mixed $defaultValue,
-        public readonly ?Cast $cast,
-        public readonly ?Transformer $transformer,
-        public readonly ?string $inputMappedName,
-        public readonly ?string $outputMappedName,
-        public readonly Collection $attributes,
+        public string $name,
+        public string $className,
+        public DataType $type,
+        public bool $validate,
+        public bool $isPromoted,
+        public bool $hasDefaultValue,
+        public mixed $defaultValue,
+        public ?Cast $cast,
+        public ?Transformer $transformer,
+        public ?string $inputMappedName,
+        public ?string $outputMappedName,
+        public Collection $attributes,
     ) {
     }
 
