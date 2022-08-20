@@ -1,12 +1,14 @@
 
 [<img src="https://github-ads.s3.eu-central-1.amazonaws.com/support-ukraine.svg?t=1" />](https://supportukrainenow.org)
 
-# Powerful data objects for Laravel
+# This package is an unofficial fork of [`spatie/laravel-data`](https://github.com/spatie/laravel-data), made to work with php 8.0.
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/spatie/laravel-data.svg?style=flat-square)](https://packagist.org/packages/spatie/laravel-data)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/spatie/laravel-data/run-tests?label=tests)](https://github.com/spatie/laravel-data/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/spatie/laravel-data/Check%20&%20fix%20styling?label=code%20style)](https://github.com/spatie/laravel-data/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain)
-[![Total Downloads](https://img.shields.io/packagist/dt/spatie/laravel-data.svg?style=flat-square)](https://packagist.org/packages/spatie/laravel-data)
+## Powerful data objects for Laravel
+
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/jackardios/laravel-data.svg?style=flat-square)](https://packagist.org/packages/jackardios/laravel-data)
+[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/jackardios/laravel-data/run-tests?label=tests)](https://github.com/jackardios/laravel-data/actions?query=workflow%3Arun-tests+branch%3Amain)
+[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/jackardios/laravel-data/Check%20&%20fix%20styling?label=code%20style)](https://github.com/jackardios/laravel-data/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain)
+[![Total Downloads](https://img.shields.io/packagist/dt/jackardios/laravel-data.svg?style=flat-square)](https://packagist.org/packages/jackardios/laravel-data)
 
 This package enables the creation of rich data objects which can be used in various ways. Using this package you only need to describe your data once:
 
